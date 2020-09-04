@@ -1,0 +1,44 @@
+        private void updatePhysicsWall(FloatRect playerRect, int pX, int pY)
+        {
+            Tile[] walls = new Tile[]
+            {
+                world.GetTile(pX - 1, pY - 1),  // блок слева от ног игрока
+                world.GetTile(pX - 1, pY - 2),  // блок слева от тела игрока
+                world.GetTile(pX - 1, pY - 3),  // блок слева от головы игрока
+                world.GetTile(pX + 1, pY - 1),  // блока справа от ног игрока
+                world.GetTile(pX + 1, pY - 2),  // блок справа от тела игрока
+                world.GetTile(pX + 1, pY - 3)   // блок справа от головы игрока
+            };
+
+            foreach (Tile tile in walls)
+            {
+                if (tile == null) continue;
+
+                FloatRect tileRect = new FloatRect(tile.Position, new Vector2f(Tile.TILE_SIZE, Tile.TILE_SIZE));
+                DebugRender.AddRectangle(tileRect, Color.Yellow);
+
+                if (playerRect.Intersects(tileRect))
+                {
+                    Vector2f offset = new Vector2f(playerRect.Left - tileRect.Left, 0);
+                    offset.X /= Math.Abs(offset.X);
+
+                    float speed = Math.Abs(movement.X);
+
+                    if (offset.X > 0)
+                    {
+                        Position = new Vector2f((tileRect.Left + tileRect.Width) + playerRect.Width / 2, Position.Y);
+                        movement.X = 0;
+                    }
+                    else if (offset.X < 0)
+                    {
+                        Position = new Vector2f(tileRect.Left - playerRect.Width / 2, Position.Y);
+                        movement.X = 0;                        
+                    }
+
+                    OnWallColided();
+                }
+            }
+        }
+
+
+
