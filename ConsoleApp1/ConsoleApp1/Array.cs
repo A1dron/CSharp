@@ -49,8 +49,14 @@ namespace ConsoleApp1
             return array;
         }
 
+        public void printArray(int[] array)
+        {
+            foreach (var i in array)
+            {
+                Console.Write($"{array[i]}; ");
+            }
+        }
 
-        
 
     }
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Caesar\\source\\repos\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {}
+    "D:\\GitHub\\CSharp\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Caesar\\source\\repos\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {
+    "D:\\GitHub\\CSharp\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Caesar\\source\\repos\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectUniqueName": "D:\\GitHub\\CSharp\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
         "projectName": "ConsoleApp1",
-        "projectPath": "C:\\Users\\Caesar\\source\\repos\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectPath": "D:\\GitHub\\CSharp\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
         "packagesPath": "C:\\Users\\Caesar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Caesar\\source\\repos\\ConsoleApp1\\ConsoleApp1\\obj\\",
+        "outputPath": "D:\\GitHub\\CSharp\\ConsoleApp1\\ConsoleApp1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Caesar\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -10,20 +10,23 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            /*
             array array = new array(10);
             array.printDuplicatesInfo();
+            */
 
+            
+            GetMatrix matrix1 = new GetMatrix(3, 2);
+            matrix1.printMatrix();
+            Console.WriteLine(matrix1.Set(2, 1, 4));
+            //Console.WriteLine(matrix1.Get(2, 1));
+            matrix1.printMatrix();
+            
 
         }
 
 
-        public void printArray(int[] array)
-        {
-            foreach (var i in array)
-            {
-                Console.Write($"{array[i]}; ");
-            }
-        }
+        
 
 
 
