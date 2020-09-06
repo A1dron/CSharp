@@ -10,18 +10,18 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            /*
-            array array = new array(10);
-            array.printDuplicatesInfo();
-            */
+            GetMatrix matrix = new GetMatrix(6, 6);
+            matrix.printMatrix();
+            Console.WriteLine();
+            
+            GetMatrix matrix1 = new GetMatrix(matrix, 3, GetMatrix.Operation.MULTIPLY);
+            matrix1.printMatrix();
+            Console.WriteLine();
 
-            
-            GetMatrix matrix1 = new GetMatrix(3, 2);
-            matrix1.printMatrix();
-            Console.WriteLine(matrix1.Set(2, 1, 4));
-            //Console.WriteLine(matrix1.Get(2, 1));
-            matrix1.printMatrix();
-            
+            GetMatrix matrix2 = new GetMatrix(matrix, 3, GetMatrix.Operation.SUM);
+            matrix2.printMatrix();
+            Console.WriteLine();
+
 
         }
 
@@ -73,46 +73,3 @@ namespace ConsoleApp1
 //        }
 //    }
 
-
-//    var test = new Test();
-//    try
-//    {
-//        test.Print();
-//    }
-//    catch (Exception)
-//    {
-//        Console.Write("5");
-//    }
-//    finally
-//    {
-//        Console.Write("4");
-//    }
-//    Console.ReadLine();
-
-//}
-
-//private class Test
-//{
-//    public void Print()
-//    {
-//        try
-//        {
-//            throw new Exception();
-//        }
-//        catch (Exception)
-//        {
-//            Console.Write("9");
-//            throw new Exception();
-//        }
-//        finally
-//        {
-//            Console.Write("2");
-//        }
-//    }
-//}
-
-//public static int getNum(string mes)
-//{
-//    Console.Write(mes);
-//    return Convert.ToInt32(Console.ReadLine());
-//}
