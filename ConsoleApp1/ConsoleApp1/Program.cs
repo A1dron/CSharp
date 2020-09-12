@@ -14,13 +14,13 @@ namespace ConsoleApp1
             matrix.printMatrix();
             Console.WriteLine();
             
-            GetMatrix matrix1 = new GetMatrix(matrix, 3, GetMatrix.Operation.MULTIPLY);
-            matrix1.printMatrix();
-            Console.WriteLine();
+            //GetMatrix matrix1 = new GetMatrix(matrix, 3, GetMatrix.Operation.MULTIPLY);
+            //matrix1.printMatrix();
+            //Console.WriteLine();
 
-            GetMatrix matrix2 = new GetMatrix(matrix, 3, GetMatrix.Operation.SUM);
-            matrix2.printMatrix();
-            Console.WriteLine();
+            //GetMatrix matrix2 = new GetMatrix(matrix, 3, GetMatrix.Operation.SUM);
+            //matrix2.printMatrix();
+            //Console.WriteLine();
 
 
         }

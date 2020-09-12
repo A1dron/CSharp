@@ -1,0 +1,13 @@
+D:\GitHub\CSharp\Joke\Joke\bin\Debug\netcoreapp3.1\Joke.exe
+D:\GitHub\CSharp\Joke\Joke\bin\Debug\netcoreapp3.1\Joke.deps.json
+D:\GitHub\CSharp\Joke\Joke\bin\Debug\netcoreapp3.1\Joke.runtimeconfig.json
+D:\GitHub\CSharp\Joke\Joke\bin\Debug\netcoreapp3.1\Joke.runtimeconfig.dev.json
+D:\GitHub\CSharp\Joke\Joke\bin\Debug\netcoreapp3.1\Joke.dll
+D:\GitHub\CSharp\Joke\Joke\bin\Debug\netcoreapp3.1\Joke.pdb
+D:\GitHub\CSharp\Joke\Joke\obj\Debug\netcoreapp3.1\Joke.csprojAssemblyReference.cache
+D:\GitHub\CSharp\Joke\Joke\obj\Debug\netcoreapp3.1\Joke.AssemblyInfoInputs.cache
+D:\GitHub\CSharp\Joke\Joke\obj\Debug\netcoreapp3.1\Joke.AssemblyInfo.cs
+D:\GitHub\CSharp\Joke\Joke\obj\Debug\netcoreapp3.1\Joke.csproj.CoreCompileInputs.cache
+D:\GitHub\CSharp\Joke\Joke\obj\Debug\netcoreapp3.1\Joke.dll
+D:\GitHub\CSharp\Joke\Joke\obj\Debug\netcoreapp3.1\Joke.pdb
+D:\GitHub\CSharp\Joke\Joke\obj\Debug\netcoreapp3.1\Joke.genruntimeconfig.cache
