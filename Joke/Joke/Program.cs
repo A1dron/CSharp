@@ -13,9 +13,14 @@ namespace Joke
         }
         static void Main(string[] args)
         {
-            Matrix matrix = new Matrix(6, 6);
+            Matrix matrix = new Matrix(6,6);
             matrix.printMatrix();
-            print(matrix.Det(matrix,IOperations.Operation.Det).ToString());
+            Console.WriteLine();
+            print(matrix.Det(matrix).ToString());
+            //Matrix matrix1 = new Matrix(5, 5);
+            //matrix1 = matrix.GetMinor(matrix, 0);
+            //matrix1.printMatrix();
+            
         }
     }
 }

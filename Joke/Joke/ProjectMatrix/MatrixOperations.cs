@@ -7,35 +7,41 @@ namespace Joke.ProjectMatrix
 
     class MatrixOperations : IOperations
     {
-        public float Det(Matrix matrix, IOperations.Operation operation)
+        
+
+        #region пересчитать детерминант
+        public float Det(Matrix matrix)
         {
             //float det = 0;
-            if (matrix.Length()==4)
-                return (matrix.GetElement(0,0)* matrix.GetElement(1, 1) - matrix.GetElement(0, 1)* matrix.GetElement(1, 0));
+            if (matrix.Length() == 4)
+                return (matrix.GetElement(0, 0) * matrix.GetElement(1, 1) - matrix.GetElement(0, 1) * matrix.GetElement(1, 0));
             float sign = 1, result = 0;
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                float[,] minor = GetMinor(matrix, i);
-                result += sign * matrix.GetElement(0,i) * Det((Matrix)minor, IOperations.Operation.Det);
+                Matrix minor = GetMinor(matrix, i);
+                result += sign * matrix.GetElement(0, i) * Det((Matrix)minor);
                 sign = -sign;
+
             }
             return result;
         }
-
-        private static float[,] GetMinor(Matrix matrix, int n)
+        #endregion
+        
+        private static Matrix GetMinor(Matrix matrix, int n)
         {
-            float[,] result = new float[matrix.GetLength(0) - 1, matrix.GetLength(0) - 1];
-            for (int i = 1; i < matrix.GetLength(0); i++)
+            //float proverka = 0;
+            Matrix minor = new Matrix(matrix.rows - 1, matrix.columns - 1);
+            for (int i = 1; i < matrix.rows; i++)
             {
-                for (int j = 0, col = 0; j < matrix.GetLength(0); j++)
+                for (int j = 0; j < matrix.columns; j++)
                 {
-                    if (j == n)
-                        continue;
-                    result[i - 1, col] = matrix.GetElement(i,j);
-                    col++;
+                    if (j == n) continue;
+                    if (j==0) minor.SetElement(i-1, j, matrix.GetElement(i, j));
+                    else minor.SetElement(i - 1, j-1, matrix.GetElement(i, j));
                 }
             }
-            return result;
+            return minor;
+            
         }
 
         public Matrix MatrixesOperation(Matrix matrix, Matrix matrix1, IOperations.Operation operation)

@@ -25,6 +25,9 @@ namespace Joke.ProjectMatrix
             }
             generateMatrix();
         }
+
+        
+
         public Matrix(int rows, int columns)
         {
             this.rows = rows;
@@ -114,6 +117,7 @@ namespace Joke.ProjectMatrix
                 }
                 Console.WriteLine();
             }
+            Console.ForegroundColor = ConsoleColor.White;
 
         }
     }
