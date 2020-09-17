@@ -1,24 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Joke.ProjectMatrix
 {
     class Matrix: MatrixOperations
     {
+        
         public readonly int rows;
         public readonly int columns;
-        private int[][] matrix;
+        private float[][] matrix;
 
+        public Matrix()
+        {
+            this.rows = 7;
+            this.columns = 7;
+            matrix = new float[rows][];
+            for (int i = 0; i < rows; i++)
+            {
+                matrix[i] = new float[columns];
+            }
+            generateMatrix();
+        }
         public Matrix(int rows, int columns)
         {
             this.rows = rows;
             this.columns = columns;
-            matrix = new int[rows][];
+            matrix = new float[rows][];
             for (int i = 0; i < rows; i++)
             {
-                matrix[i] = new int[columns];
+                matrix[i] = new float[columns];
             }
             generateMatrix();
         }
@@ -30,19 +44,48 @@ namespace Joke.ProjectMatrix
             this.columns = matrix.columns;
         }
 
-        public int GetElement(int rows, int columns)
+        public static explicit operator float[,](Matrix matrix)
+        {
+            return (float[,])matrix;
+        }
+
+        public static explicit operator Matrix (float[,] matrix)
+        {
+            return (Matrix)matrix;
+        }
+
+        public int GetLength(int dimension)
+        {
+            return matrix.GetLength(dimension);
+        }
+
+        public int Length()
+        {
+            int lenght = 0;
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    lenght += 1;
+                }
+            }
+            return lenght;
+        }
+
+        public float GetElement(int rows, int columns)
         {
             if (rows < 0 || rows >= this.rows || columns < 0 || columns >= this.columns) throw new Exception("Poka bratishka");
             return matrix[rows][columns];
         }
 
-        public int SetElement(int rows, int columns, int newElement)
+        
+        public float SetElement(int rows, int columns, float newElement)
         {
             if (rows < 0 || rows >= this.rows || columns < 0 || columns >= this.columns) throw new Exception("Kriticheskaya bratishka");
+            //int i = 0;
             matrix[rows][columns] = newElement;
             return matrix[rows][columns];
         }
-
         private void generateMatrix()
         {
             Random random = new Random();
@@ -58,8 +101,8 @@ namespace Joke.ProjectMatrix
 
         public void printMatrix()
         {
-            int max = MaxElement(this);
-            int min = MinElement(this);
+            float max = MaxElement(this);
+            float min = MinElement(this);
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < columns; j++)
