@@ -23,7 +23,7 @@ namespace Joke.ProjectMatrix
 
         
 
-        public static Matrix GetMinor(Matrix matrix, int n)
+        public static Matrix GetMinor(Matrix matrix, int column)
         {
             //float proverka = 0;
             Matrix minor = new Matrix(matrix.rows - 1, matrix.columns - 1);
