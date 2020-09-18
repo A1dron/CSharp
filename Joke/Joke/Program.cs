@@ -13,7 +13,7 @@ namespace Joke
         }
         static void Main(string[] args)
         {
-            Matrix matrix = new Matrix(6,6);
+            Matrix matrix = new Matrix(3,3);
             matrix.printMatrix();
             Console.WriteLine();
             print(matrix.Det(matrix).ToString());
