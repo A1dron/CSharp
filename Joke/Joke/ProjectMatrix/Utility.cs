@@ -31,7 +31,7 @@ namespace Joke.ProjectMatrix
             {
                 for (int j = 0; j < matrix.columns; j++)
                 {
-                    if (j == n) continue;
+                    if (j == column) continue;
                     if (j == 0) minor.SetElement(i - 1, j, matrix.GetElement(i, j));
                     else minor.SetElement(i - 1, j - 1, matrix.GetElement(i, j));
                 }
