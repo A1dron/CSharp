@@ -47,12 +47,12 @@ namespace Joke.ProjectMatrix
             this.columns = matrix.columns;
         }
 
-        public static explicit operator float[,](Matrix matrix)
+        public static explicit operator float(Matrix matrix)
         {
-            return (float[,])matrix;
+            return (float)matrix;
         }
 
-        public static explicit operator Matrix (float[,] matrix)
+        public static explicit operator Matrix (float matrix)
         {
             return (Matrix)matrix;
         }
@@ -61,7 +61,31 @@ namespace Joke.ProjectMatrix
         {
             return matrix.GetLength(dimension);
         }
+        public static float operator *(float c1, Matrix c2)
+        {
+            float result = 0;
+            for (int i = 0; i < c2.rows; i++)
+            {
+                for (int j = 0; j < c2.columns; j++)
+                {
+                    result += c1 * c2.GetElement(i,j);
+                }
+            }
+            return result; 
+        }
 
+        public static double operator *(double c1, Matrix c2)
+        {
+            double result = 0;
+            for (int i = 0; i < c2.rows; i++)
+            {
+                for (int j = 0; j < c2.columns; j++)
+                {
+                    result += c1 * c2.GetElement(i, j);
+                }
+            }
+            return result;
+        }
         public int Length()
         {
             int lenght = 0;
@@ -89,6 +113,7 @@ namespace Joke.ProjectMatrix
             matrix[rows][columns] = newElement;
             return matrix[rows][columns];
         }
+        
         private void generateMatrix()
         {
             Random random = new Random();
@@ -101,7 +126,7 @@ namespace Joke.ProjectMatrix
             }
             return;
         }
-
+        
         public void printMatrix()
         {
             float max = MaxElement(this);

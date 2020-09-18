@@ -17,7 +17,7 @@ namespace Joke.ProjectMatrix
 
         float MaxElement(Matrix matrix);
         float MinElement(Matrix matrix);
-        public Matrix MatrixOperation(Matrix matrix, int factor, Operation operation);
+        public Matrix MatrixOperation(Matrix matrix, float factor, Operation operation);
         public Matrix MatrixesOperation(Matrix matrix, Matrix matrix1, Operation operation);
         public float Det(Matrix matrix);
 

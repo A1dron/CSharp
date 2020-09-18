@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using static Joke.ProjectMatrix.Utility;
 
 namespace Joke.ProjectMatrix
 {
@@ -9,41 +10,24 @@ namespace Joke.ProjectMatrix
     {
         
 
-        #region пересчитать детерминант
+        
         public float Det(Matrix matrix)
         {
             //float det = 0;
             if (matrix.Length() == 4)
                 return (matrix.GetElement(0, 0) * matrix.GetElement(1, 1) - matrix.GetElement(0, 1) * matrix.GetElement(1, 0));
-            float sign = 1, result = 0;
+            float result = 0;
+            Matrix minor = new Matrix(matrix.GetLength(0) - 1, matrix.GetLength(0) - 1);
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                Matrix minor = GetMinor(matrix, i);
-                result += sign * matrix.GetElement(0, i) * Det((Matrix)minor);
-                sign = -sign;
-
+                minor = GetMinor(matrix, i);
+                result +=Pow(-1,i) * matrix.GetElement(0, i) * Det(minor);
+                
             }
             return result;
         }
-        #endregion
         
-        private static Matrix GetMinor(Matrix matrix, int n)
-        {
-            //float proverka = 0;
-            Matrix minor = new Matrix(matrix.rows - 1, matrix.columns - 1);
-            for (int i = 1; i < matrix.rows; i++)
-            {
-                for (int j = 0; j < matrix.columns; j++)
-                {
-                    if (j == n) continue;
-                    if (j==0) minor.SetElement(i-1, j, matrix.GetElement(i, j));
-                    else minor.SetElement(i - 1, j-1, matrix.GetElement(i, j));
-                }
-            }
-            return minor;
-            
-        }
-
+        
         public Matrix MatrixesOperation(Matrix matrix, Matrix matrix1, IOperations.Operation operation)
         {
             Matrix result = new Matrix(matrix);
@@ -63,7 +47,7 @@ namespace Joke.ProjectMatrix
             return result;
         }
 
-        public Matrix MatrixOperation(Matrix matrix, int factor, IOperations.Operation operation)
+        public Matrix MatrixOperation(Matrix matrix, float factor, IOperations.Operation operation)
         {
             Matrix copy = new Matrix(matrix);
             switch (operation)

@@ -6,21 +6,17 @@ namespace Joke
 {
     class Program
     {
-        public static void print(string mes)
-        {
-            Console.Write(mes);
-            Console.WriteLine();
-        }
+        
         static void Main(string[] args)
         {
-            Matrix matrix = new Matrix(6,6);
+            Matrix matrix = new Matrix(3, 3);
             matrix.printMatrix();
-            Console.WriteLine();
+            line();
             print(matrix.Det(matrix).ToString());
-            //Matrix matrix1 = new Matrix(5, 5);
-            //matrix1 = matrix.GetMinor(matrix, 0);
-            //matrix1.printMatrix();
-            
         }
     }
+
+
+
+
 }
