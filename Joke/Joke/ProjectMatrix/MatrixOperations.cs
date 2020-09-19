@@ -6,6 +6,9 @@ using static Joke.ProjectMatrix.Utility;
 namespace Joke.ProjectMatrix
 {
 
+    //TODO в будущем по хорошему бы выделить постоянные итерации по значениям
+    //     в отдельный Action/Func с передачей функции (лямбда) 
+
     class MatrixOperations : IOperations
     {
         
@@ -14,15 +17,15 @@ namespace Joke.ProjectMatrix
         public float Det(Matrix matrix)
         {
             //float det = 0;
-            if (matrix.Length() == 4)
+            if(matrix.Length() == 4)
                 return (matrix.GetElement(0, 0) * matrix.GetElement(1, 1) - matrix.GetElement(0, 1) * matrix.GetElement(1, 0));
-            float result = 0;
-            Matrix minor = new Matrix(matrix.GetLength(0) - 1, matrix.GetLength(0) - 1);
+            float sign = 1, result = 0;
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                minor = GetMinor(matrix, i);
-                result +=Pow(-1,i) * matrix.GetElement(0, i) * Det(minor);
-                
+                Matrix minor = GetMinor(matrix, i);
+                result += sign * matrix.GetElement(0, i) * Det(minor);
+                sign = -sign;
+
             }
             return result;
         }

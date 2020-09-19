@@ -9,7 +9,7 @@ namespace Joke
         
         static void Main(string[] args)
         {
-            Matrix matrix = new Matrix(3, 3);
+            Matrix matrix = new Matrix(6, 6);
             matrix.printMatrix();
             line();
             print(matrix.Det(matrix).ToString());
