@@ -7,7 +7,8 @@ using System.Text;
 
 namespace Joke.ProjectMatrix
 {
-    class Matrix: MatrixOperations
+
+    public class Matrix: MatrixOperations
     {
         
         public readonly int rows;
@@ -56,7 +57,8 @@ namespace Joke.ProjectMatrix
         {
             return (Matrix)matrix;
         }
-
+        
+        [Obsolete("Есть поля rows/columns")]
         public int GetLength(int dimension)
         {
             return matrix.GetLength(dimension);

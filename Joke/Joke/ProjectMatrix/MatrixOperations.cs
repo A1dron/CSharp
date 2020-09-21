@@ -23,16 +23,32 @@ namespace Joke.ProjectMatrix
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 Matrix minor = GetMinor(matrix, i);
-                result += sign * matrix.GetElement(0, i) * Det(minor);
+                result += sign * matrix.GetElement(0, i) * Det((Matrix)minor);
                 sign = -sign;
 
             }
             return result;
         }
-        
-        
-        public Matrix MatrixesOperation(Matrix matrix, Matrix matrix1, IOperations.Operation operation)
-        {
+        #endregion
+
+        private static Matrix GetMinor(Matrix matrix, int n) {
+            Matrix minor = new Matrix(matrix.rows - 1, matrix.columns - 1);
+            for (int i = 1; i < matrix.rows; i++) {
+                for (int j = 0; j < n; j++) {
+                    minor.SetElement(i - 1, j, matrix.GetElement(i, j));
+                }
+            }
+            for (int i = 1; i < matrix.rows; i++) {
+                for (int j = n + 1; j < matrix.columns; j++) {
+                    minor.SetElement(i - 1, j - 1, matrix.GetElement(i, j));
+                }
+            }
+            return minor;
+
+        }
+
+        [Obsolete("работает только с MATRIXSUM")]
+        public Matrix MatrixesOperation(Matrix matrix, Matrix matrix1, IOperations.Operation operation) {
             Matrix result = new Matrix(matrix);
             switch (operation)
             {
@@ -50,8 +66,8 @@ namespace Joke.ProjectMatrix
             return result;
         }
 
-        public Matrix MatrixOperation(Matrix matrix, float factor, IOperations.Operation operation)
-        {
+        [Obsolete("работает только с MULTIPLY/SUM")]
+        public Matrix MatrixOperation(Matrix matrix, int factor, IOperations.Operation operation) {
             Matrix copy = new Matrix(matrix);
             switch (operation)
             {
@@ -74,7 +90,7 @@ namespace Joke.ProjectMatrix
                         }
                     }
                     break;
-                
+
             }
             return copy;
         }
@@ -111,6 +127,6 @@ namespace Joke.ProjectMatrix
             return min;
         }
 
-        
+
     }
 }
