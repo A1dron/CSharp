@@ -9,7 +9,7 @@ namespace Joke.ProjectMatrix
     //TODO в будущем по хорошему бы выделить постоянные итерации по значениям
     //     в отдельный Action/Func с передачей функции (лямбда) 
 
-    class MatrixOperations : IOperations
+    public class MatrixOperations : IOperations
     {
         
 
@@ -29,7 +29,6 @@ namespace Joke.ProjectMatrix
             }
             return result;
         }
-        #endregion
 
         private static Matrix GetMinor(Matrix matrix, int n) {
             Matrix minor = new Matrix(matrix.rows - 1, matrix.columns - 1);
