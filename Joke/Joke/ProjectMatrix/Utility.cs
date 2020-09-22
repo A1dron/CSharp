@@ -22,8 +22,6 @@ namespace Joke.ProjectMatrix
             return copy;
         }
 
-        
-
         public static Matrix GetMinor(Matrix matrix, int columns)
         {
             Matrix minor = new Matrix(matrix.rows - 1, matrix.columns - 1);
@@ -44,6 +42,8 @@ namespace Joke.ProjectMatrix
             return minor;
 
         }
+
+        
 
         public static float Pow(float x, float y)
         {

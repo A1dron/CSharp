@@ -20,31 +20,17 @@ namespace Joke.ProjectMatrix
             if(matrix.Length() == 4)
                 return (matrix.GetElement(0, 0) * matrix.GetElement(1, 1) - matrix.GetElement(0, 1) * matrix.GetElement(1, 0));
             float sign = 1, result = 0;
-            for (int i = 0; i < matrix.GetLength(0); i++)
+            for (int i = 0; i < matrix.columns; i++)
             {
                 Matrix minor = GetMinor(matrix, i);
-                result += sign * matrix.GetElement(0, i) * Det((Matrix)minor);
+                result += sign * matrix.GetElement(0, i) * Det(minor);
                 sign = -sign;
 
             }
             return result;
         }
 
-        private static Matrix GetMinor(Matrix matrix, int n) {
-            Matrix minor = new Matrix(matrix.rows - 1, matrix.columns - 1);
-            for (int i = 1; i < matrix.rows; i++) {
-                for (int j = 0; j < n; j++) {
-                    minor.SetElement(i - 1, j, matrix.GetElement(i, j));
-                }
-            }
-            for (int i = 1; i < matrix.rows; i++) {
-                for (int j = n + 1; j < matrix.columns; j++) {
-                    minor.SetElement(i - 1, j - 1, matrix.GetElement(i, j));
-                }
-            }
-            return minor;
-
-        }
+        
 
         [Obsolete("работает только с MATRIXSUM")]
         public Matrix MatrixesOperation(Matrix matrix, Matrix matrix1, IOperations.Operation operation) {
