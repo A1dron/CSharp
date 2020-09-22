@@ -7,6 +7,7 @@ namespace Joke.ProjectMatrix
 
     class Utility
     {
+        //TODO Неиспользуемый параметр
         public static Matrix MatObr(Matrix matrix, IOperations.Operation operation)
         {
             Matrix copy = new Matrix(matrix);

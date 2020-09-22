@@ -6,7 +6,11 @@ namespace Joke
 {
     class Program
     {
-        
+        public static void print(string mes)
+        {
+            Console.Write(mes);
+            Console.WriteLine();
+        }
         static void Main(string[] args)
         {
             Matrix matrix = new Matrix(6, 6);
@@ -15,8 +19,4 @@ namespace Joke
             print(matrix.Det(matrix).ToString());
         }
     }
-
-
-
-
 }
