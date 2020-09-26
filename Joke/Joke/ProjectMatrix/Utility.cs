@@ -43,7 +43,13 @@ namespace Joke.ProjectMatrix
 
         }
 
-        
+        public static void printMass(int[] mass)
+        {
+            for (int i = 0; i < mass.Length; i++)
+            {
+                Console.Write($"{mass[i]} ");
+            }
+        }
 
         public static float Pow(float x, float y)
         {
