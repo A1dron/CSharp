@@ -24,11 +24,11 @@ namespace Joke
             print(matrix.Det(matrix).ToString());
             */
             Fibonachi fib = new Fibonachi(10);
-            int[] spiral = new int[10];
+            //int[] spiral = new int[10];
             fib.printFibonachi();
             line();
-            spiral = fib.spiralFibonachi();
-            printMass(spiral);
+            fib.spiralFibonachi();
+            //printMass(spiral);
         }
     }
 }

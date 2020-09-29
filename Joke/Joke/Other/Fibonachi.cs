@@ -1,9 +1,5 @@
 ﻿using System;
-using static Joke.ProjectMatrix.Utility;
-using System.Collections.Generic;
-using System.Text;
 using System.Collections;
-using System.Runtime.CompilerServices;
 
 namespace Joke.Other
 {
@@ -25,10 +21,9 @@ namespace Joke.Other
             }
         }
 
-        public int[] spiralFibonachi()
+        public void spiralFibonachi()
         {
             
-            int[] spiral = new int[fibonachi.Length];
             ArrayList rightNumbers = new ArrayList();
             ArrayList leftNumbers = new ArrayList();
             for (int i = 0; i < fibonachi.Length; i++)
@@ -38,13 +33,15 @@ namespace Joke.Other
             }
             leftNumbers.Reverse();
             leftNumbers.AddRange(rightNumbers);
-            for (int i = 0; i < fibonachi.Length; i++)
-            {
-                spiral[i] = (int)leftNumbers[i];
-            }
-            return spiral;
+            printFibonachi(leftNumbers);
         }
-
+        private void printFibonachi(ArrayList list)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                Console.Write($"{list[i]} ");
+            }
+        }
         public void printFibonachi()
         {
             for (int i = 0; i < fibonachi.Length; i++)
