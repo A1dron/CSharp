@@ -1,6 +1,9 @@
-﻿using Joke.Other;
+﻿using Joke.Figure;
+using Joke.Other;
 using Joke.ProjectMatrix;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using static Joke.ProjectMatrix.Utility;
 
 namespace Joke
@@ -18,17 +21,19 @@ namespace Joke
         static void Main(string[] args)
         {
             /*
-            Matrix matrix = new Matrix(6, 6);
-            matrix.printMatrix();
-            line();
-            print(matrix.Det(matrix).ToString());
-            */
-            Fibonachi fib = new Fibonachi(10);
-            //int[] spiral = new int[10];
-            fib.printFibonachi();
-            line();
-            fib.spiralFibonachi();
-            //printMass(spiral);
+            List<iFigure> figures = new List<iFigure>();
+            Rectangle rect = new Rectangle(4,1);
+            Rectangle rect1 = new Rectangle(4);
+            Circle circle = new Circle(1);
+            figures.Add(rect);
+            figures.Add(rect1);
+            figures.Add(circle);
+
+            int sumSquare = 0;
+            foreach (iFigure i in figures)
+            {
+                sumSquare += i.Square();
+            }*/
         }
     }
 }
